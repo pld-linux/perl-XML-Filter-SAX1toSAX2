@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	Filter-SAX1toSAX2
-Summary:	XML::Filter::SAX1toSAX2 - Convert SAX1 events to SAX2
-#Summary(pl):	
+Summary:	XML::Filter::SAX1toSAX2 - convert SAX1 events to SAX2
+Summary(pl):	XML::Filter::SAX1toSAX2 - konwersja zdarzeñ SAX1 do SAX2
 Name:		perl-XML-Filter-SAX1toSAX2
 Version:	0.03
 Release:	1
