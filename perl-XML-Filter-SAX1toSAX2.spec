@@ -3,8 +3,8 @@
 %bcond_without	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	XML
-%define	pnam	Filter-SAX1toSAX2
+%define		pdir	XML
+%define		pnam	Filter-SAX1toSAX2
 Summary:	XML::Filter::SAX1toSAX2 - convert SAX1 events to SAX2
 Summary(pl):	XML::Filter::SAX1toSAX2 - konwersja zdarzeñ SAX1 do SAX2
 Name:		perl-XML-Filter-SAX1toSAX2
