@@ -32,8 +32,10 @@ This module is a very simple module for creating SAX2 events from SAX1
 events. It is useful in the case where you have a SAX1 parser but want
 to use a SAX2 handler or filter of some sort.
 
-# %description -l pl
-# TODO
+%description -l pl
+Ten modu³ jest bardzo prostym modu³em do tworzenia zdarzeñ SAX2 ze
+zdarzeñ SAX1. Jest przydatny w przypadku kiedy mamy parser SAX1, ale
+chcemy u¿ywaæ jakiej¶ procedury obs³ugi czy filtra SAX2.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -56,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_vendorlib}/%{pdir}/*/*.pm
+%{perl_vendorlib}/XML/*/*.pm
 %{_mandir}/man3/*
