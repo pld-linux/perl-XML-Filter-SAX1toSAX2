@@ -1,0 +1,59 @@
+#
+# Conditional build:
+%bcond_without	tests		# do not perform "make test"
+#
+%include	/usr/lib/rpm/macros.perl
+%define	pdir	XML
+%define	pnam	Filter-SAX1toSAX2
+Summary:	XML::Filter::SAX1toSAX2 - Convert SAX1 events to SAX2
+#Summary(pl):	
+Name:		perl-XML-Filter-SAX1toSAX2
+Version:	0.03
+Release:	1
+# same as perl
+License:	GPL v1+ or Artistic
+Group:		Development/Languages/Perl
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+BuildRequires:	perl-devel >= 5.6
+BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-libxml
+BuildRequires:	perl-XML-Handler-YAWriter
+BuildRequires:	perl-XML-NamespaceSupport
+BuildRequires:	perl-XML-SAX
+BuildRequires:	perl-XML-SAX-Writer
+%endif
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This module is a very simple module for creating SAX2 events from SAX1
+events. It is useful in the case where you have a SAX1 parser but want
+to use a SAX2 handler or filter of some sort.
+
+# %description -l pl
+# TODO
+
+%prep
+%setup -q -n %{pdir}-%{pnam}-%{version}
+
+%build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
+
+%{?with_tests:%{__make} test}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%{perl_vendorlib}/%{pdir}/*/*.pm
+%{_mandir}/man3/*
