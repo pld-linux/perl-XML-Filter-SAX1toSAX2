@@ -6,7 +6,7 @@
 %define		pdir	XML
 %define		pnam	Filter-SAX1toSAX2
 Summary:	XML::Filter::SAX1toSAX2 - convert SAX1 events to SAX2
-Summary(pl):	XML::Filter::SAX1toSAX2 - konwersja zdarzeÒ SAX1 do SAX2
+Summary(pl.UTF-8):   XML::Filter::SAX1toSAX2 - konwersja zdarze≈Ñ SAX1 do SAX2
 Name:		perl-XML-Filter-SAX1toSAX2
 Version:	0.03
 Release:	1
@@ -32,10 +32,10 @@ This module is a very simple module for creating SAX2 events from SAX1
 events. It is useful in the case where you have a SAX1 parser but want
 to use a SAX2 handler or filter of some sort.
 
-%description -l pl
-Ten modu≥ jest bardzo prostym modu≥em do tworzenia zdarzeÒ SAX2 ze
-zdarzeÒ SAX1. Jest przydatny w przypadku kiedy mamy parser SAX1, ale
-chcemy uøywaÊ jakiej∂ procedury obs≥ugi czy filtra SAX2.
+%description -l pl.UTF-8
+Ten modu≈Ç jest bardzo prostym modu≈Çem do tworzenia zdarze≈Ñ SAX2 ze
+zdarze≈Ñ SAX1. Jest przydatny w przypadku kiedy mamy parser SAX1, ale
+chcemy u≈ºywaƒá jakiej≈õ procedury obs≈Çugi czy filtra SAX2.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
