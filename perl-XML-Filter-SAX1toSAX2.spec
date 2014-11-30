@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	XML
 %define		pnam	Filter-SAX1toSAX2
+%include	/usr/lib/rpm/macros.perl
 Summary:	XML::Filter::SAX1toSAX2 - convert SAX1 events to SAX2
 Summary(pl.UTF-8):	XML::Filter::SAX1toSAX2 - konwersja zdarzeń SAX1 do SAX2
 Name:		perl-XML-Filter-SAX1toSAX2
@@ -15,14 +15,15 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	7189c56d9f9c23f92f6a66808423afd2
+URL:		http://search.cpan.org/dist/XML-Filter-SAX1toSAX2/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-libxml
 BuildRequires:	perl-XML-Handler-YAWriter
 BuildRequires:	perl-XML-NamespaceSupport
 BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-XML-SAX-Writer
+BuildRequires:	perl-libxml
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
